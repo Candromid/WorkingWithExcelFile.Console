@@ -7,10 +7,10 @@ WorkWithExcelFile - это консольное приложение, разра
 
 ## Core (Project)
 - Data (Folder)
-  - [Client.cs](./Core/Data/Client.cs)
+  - [Client.cs](./Core/Data/Client.cs) 
   - [Order.cs](./Core/Data/Order.cs)
   - [Product.cs](./Core/Data/Product.cs)
-- [OrderInfo.cs](./Core/OrderInfo.cs)
+- [OrderInfo.cs]([./Core/OrderInfo.cs](https://github.com/Candromid/WorkingWithExcelFile.Console/blob/master/TestWork.Core/OrderInfo.cs))
 
 ## BusinessLogic (Project)
 - Excel (Folder)

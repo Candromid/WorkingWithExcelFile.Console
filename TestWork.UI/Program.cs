@@ -30,7 +30,7 @@ namespace TestWork.UI
                 switch (choice)
                 {
                     case 1:
-                        filePath = RequestFilePath();
+                        filePath = GetUserInputFilePath();
                         ShowMainMenu();
                         break;
                     case 0:
@@ -48,13 +48,7 @@ namespace TestWork.UI
             }
 
         }
-
-        static string RequestFilePath()
-        {
-            ExcelPath excelPath = new ExcelPath();
-            return excelPath.GetUserInputFilePath();
-        }
-
+            
         static void ShowMainMenu()
         {
             var (products, clients, orders) = LoadData();
@@ -88,7 +82,7 @@ namespace TestWork.UI
                     case 3:
                         GetGoldenClient(products, clients, orders);
                         break;
-                    case 4:
+                    case 0:
                         return;
                     default:
                         Console.WriteLine("Некорректный выбор. Попробуйте еще раз.");
@@ -102,6 +96,27 @@ namespace TestWork.UI
                 Console.WriteLine("3. Запрос на определение золотого клиента");
                 Console.WriteLine("0. Выход в предыдущее меню");
             }
+        }
+
+        static string GetUserInputFilePath()
+        {
+            string filePath;
+            do
+            {
+                Console.WriteLine("Введите путь к файлу Excel с данными (путь не должен содержать кириллицу):");
+                filePath = Console.ReadLine();
+
+                if (!filePath.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
+                {
+                    Console.WriteLine("Неверный формат файла. Укажите путь к файлу с расширением .xlsx.");
+                }
+                else if (!System.IO.File.Exists(filePath))
+                {
+                    Console.WriteLine("Файл не найден. Проверьте правильность пути.");
+                }
+            } while (!filePath.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase) || !System.IO.File.Exists(filePath));
+
+            return filePath;
         }
 
 

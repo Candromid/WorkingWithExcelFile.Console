@@ -1,27 +1,7 @@
 # WorkingWithExcelFile.Console
+
 ## Описание проекта:
 WorkWithExcelFile - это консольное приложение, разработанное для работы с данными, хранящимися в файлах формата Microsoft Excel (.xlsx). Проект предоставляет возможность ввода пути к файлу с данными, чтения информации о продуктах, клиентах и заказах, а также выполнения нескольких запросов к этим данным.
-
-## Архитектура проекта:
-# WorkWithExcelFile (Solution)
-
-## Core (Project)
-- Data (Folder)
-  - [Client.cs](./Core/Data/Client.cs) 
-  - [Order.cs](./Core/Data/Order.cs)
-  - [Product.cs](./Core/Data/Product.cs)
-- [OrderInfo.cs]([./Core/OrderInfo.cs](https://github.com/Candromid/WorkingWithExcelFile.Console/blob/master/TestWork.Core/OrderInfo.cs))
-
-## BusinessLogic (Project)
-- Excel (Folder)
-  - [ExcelPath.cs](./BusinessLogic/Excel/ExcelPath.cs)
-  - [ClientReader.cs](./BusinessLogic/Excel/ClientReader.cs)
-  - [OrderReader.cs](./BusinessLogic/Excel/OrderReader.cs)
-  - [ProductReader.cs](./BusinessLogic/Excel/ProductReader.cs)
-- [OrderInfoCombine.cs](./BusinessLogic/OrderInfoCombine.cs)
-
-## UI (Project)
-- [Program.cs](./UI/Program.cs)
 
 ## Описание структуры:
 ### Core (Project):
@@ -31,7 +11,7 @@ OrderInfo объединяет необходимые поля из таблиц
 
 ### BusinessLogic (Project):
 Отвечает за бизнес-логику приложения.
-Excel содержит классы для работы с Excel: ExcelPath, ClientReader, OrderReader, ProductReader.
+Excel содержит классы для работы с Excel: ClientReader, OrderReader, ProductReader.
 OrderInfoCombine - класс, объединяющий методы для работы с данными.
 
 ### UI (Project):
